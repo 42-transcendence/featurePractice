@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: purple;
+  /* align-items: center; */
+  padding: 6rem;
+}
+
+.navigation > * {
+    display: block;
+    margin: auto 0;
+    background-color: red;
+}
