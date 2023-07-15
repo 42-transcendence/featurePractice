@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+// import styles from './page.module.css';
 import './my.css';
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ function GoogleLogin() {
 
 function StaticRoute() {
     return (
-        <Link href="./post1.tsx"><button>this is static route</button></Link>
+        <Link href="./post1"><p>this is static route</p></Link>
     );
 }
 
@@ -26,7 +26,8 @@ function NavigationBar() {
 
 export default function Home() {
     return (
-        <main className={styles.main}>
+        // <main className={styles.main}>
+        <main>
             <NavigationBar />
             <GoogleLogin />
             <StaticRoute />
