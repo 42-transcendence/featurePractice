@@ -1,14 +1,25 @@
 "use client"
-// import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const TimeStamp = () => {
-    // const [isServer, setIsServer] = useState(true);
 
-    // useEffect(() => setIsServer(false), []);
+    const [buttonText, setButtonText] = useState("copy to clipboard");
+
+    const timestamp = Date.now();
+
+    const copyToClipboard = async () => {
+        navigator.clipboard.writeText(timestamp.toString())
+            .then(() => setButtonText("copied!"))
+            .catch(() => setButtonText("cannot copy!"));
+
+        setTimeout(() => setButtonText("copy to clipboard"), 1000);
+    }
 
     return (
-        // <p>{isServer ? "loading..." : Date.now()}</p>
-        <p>{Date.now()}</p>
+        <section>
+            <p>{timestamp}</p>
+            <button onClick={copyToClipboard}>{buttonText}</button>
+        </section>
     );
 }
 
