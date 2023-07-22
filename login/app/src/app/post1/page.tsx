@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 
 const ClientTimeStamp = dynamic(() => import("./TimeStamp"), {
     ssr: false,
-    loading: () => <p>loaDiNg...</p>,
+    loading: () => <section><p>loaDiNg...</p></section>,
 });
 
 export default function Post1() {
@@ -18,7 +18,7 @@ export default function Post1() {
             <ClientTimeStamp />
             <Counter />
             <Timer />
-            <Link href=".."><p>go back</p></Link>
+            <Link href=".."><span>go back</span></Link>
         </main>
     )
 }
