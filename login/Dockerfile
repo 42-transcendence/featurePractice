@@ -6,5 +6,7 @@ WORKDIR /app
 
 RUN ["npm", "i", "-g", "npm"]
 RUN ["npm", "ci"]
+RUN ["npx", "next", "telemetry", "disable"]
 
-ENTRYPOINT npx next telemetry disable && npm run dev
+ENTRYPOINT ["npm"]
+CMD ["run", "dev"]
