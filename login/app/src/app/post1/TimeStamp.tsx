@@ -1,14 +1,13 @@
 "use client"
 import { useState } from "react";
 
-const TimeStamp = () => {
+type copyButtonText = "copy to clipboard" | "copied!" | "cannot copy!";
 
-    const [buttonText, setButtonText] = useState("copy to clipboard");
-
-    const timestamp = Date.now();
+const CopyButton = ({ textToCopy }: { textToCopy: string }) => {
+    const [buttonText, setButtonText] = useState<copyButtonText>("copy to clipboard");
 
     const copyToClipboard = async () => {
-        navigator.clipboard.writeText(timestamp.toString())
+        navigator.clipboard.writeText(textToCopy)
             .then(() => setButtonText("copied!"))
             .catch(() => setButtonText("cannot copy!"));
 
@@ -16,9 +15,18 @@ const TimeStamp = () => {
     }
 
     return (
+        <button onClick={copyToClipboard}>{buttonText}</button>
+    );
+}
+
+const TimeStamp = () => {
+
+    const timestamp = Date.now().toString();
+
+    return (
         <section>
             <p>{timestamp}</p>
-            <button onClick={copyToClipboard}>{buttonText}</button>
+            <CopyButton textToCopy={timestamp} />
         </section>
     );
 }
