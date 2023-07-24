@@ -14,21 +14,10 @@ function StaticRoute() {
     );
 }
 
-function NavigationBar() {
-    return (
-        <p className="navigation">
-            <span>this is logo</span>
-            <span>this is button</span>
-            <span>profile pic</span>
-        </p>
-    );
-}
-
 export default function Home() {
     return (
         // <main className={styles.main}>
         <main>
-            <NavigationBar />
             <GoogleLogin />
             <StaticRoute />
         </main>
