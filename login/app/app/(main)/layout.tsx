@@ -1,3 +1,5 @@
+import './my.css';
+
 function NavigationBar() {
     return (
         <p className="navigation">

@@ -11,3 +11,9 @@
     margin: auto 0;
     background-color: red;
 }
+
+section {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
